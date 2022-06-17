@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  swagger-parser-db:
+    container_name: git_db
+    image: postgres:13-alpine
+    restart: on-failure
+    ports:
+      - 5445:5432
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: git-stat
